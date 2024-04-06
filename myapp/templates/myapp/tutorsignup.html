@@ -1,0 +1,1324 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>sign up findtutor</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1, minimum-scale=1,user-scalable=no" />
+    {% comment %}
+    <link rel="icon" href="https://static.hometutorsite.com/content/images/common-sm/favicon.ico" type="image/x-icon" />
+    {% endcomment %}
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/custom/bootstrap.min.css" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans%7cOpen%20Sans%7cMerienda+One" rel="stylesheet" type="text/css" />
+
+    <link href="https://static.hometutorsite.com/content/css/main-26may17.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KTDR77M");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <link rel="canonical" href="https://www.hometutorsite.com/landing/looking-for-home-tutors/" />
+    <link href="https://static.hometutorsite.com/content/css/landing-20aug2018.css" rel="stylesheet" type="text/css" />
+    <style>
+      @media only screen and (max-width: 610px) {
+        .sm-contact-font-size {
+          font-size: 12px !important;
+        }
+      }
+
+      @media only screen and (max-width: 610px) {
+        .hts-contact-top-block,
+        .hts-whatsapp-top-block {
+          font-size: 12px;
+        }
+      }
+    </style>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Global site tag (gtag.js) - Google Ads: 955026931 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-955026931"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-955026931", { allow_enhanced_conversions: true });
+    </script>
+  </head>
+  <body class="lp-body">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTDR77M" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="wrap">
+      <div id="header" class="navbar navbar-inverse navbar-fixed-top header-lp" role="navigation">
+        <div class="container"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="full-width full-width-lp">
+            <div class="right-common-content lp-content">
+              <div class="row">
+                <div class="col-md-5 col-md-push-7 col-">
+                  <div id="HomeTutorOrStudentParentInteractPanel" class="form-horizontal contact-form lp-form">
+                    <div class="RegistraitionFreeStylePadding" id="RegistrationIsFree">
+                      <button type="button" class="RegistrationFreeStyle">
+                        <div class="MarginTopStyle">
+                          <span style="font-weight: bold; font: MONOSPACE; letter-spacing: 2px">FREE</span>
+                          Registration
+                        </div>
+                      </button>
+                    </div>
+
+                    <div class="hidden-xs">
+                      <span class="arrow-hand"><img src="https://static.hometutorsite.com/content/images/landing/arrow-hand-red.png" /></span>
+                    </div>
+                    <div id="rightSideForm">
+                      <form action=" " class="form-validation" data-ajax="true" data-ajax-begin="LandingAjaxBegin" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-success="TrackGoogleAdwordsConversions" data-ajax-update="#rightSideForm" id="landing-page-form" method="POST">
+                        {% csrf_token %}
+                        <div class="get-in-touch">
+                          <div class="form-control-lp">
+                            I am a &nbsp;
+                            <label class="rad studentStyle"> Tutor &nbsp; </label>
+                          </div>
+                        </div>
+                        <div class="step1" id="step1">
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon">
+                                  <span class="common-sprite-opt contact-name"></span>
+                                </span>
+                                <input id="Name" name="full_name" class="form-control input-lg validate[required,custom[onlyLetterSp]]" type="text" placeholder="Name" data-errormessage-value-missing="Please enter your name." />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon input-mail-block">
+                                  <span class="common-sprite-opt contact-details-phone"></span>
+                                </span>
+                                <input type="tel" id="Mobile" name="phone" class="form-control lp-phone-number input-lg validate[required,custom[phone],funcCall[validateIndianMobileNumber]]" placeholder="Mobile Number" data-errormessage-value-missing="Please enter mobile number." />
+                              </div>
+                              <p class="small text-muted">We don't misuse your phone number</p>
+                            </div>
+                          </div>
+                          <div class="form-group-lp" id="tuition-need-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon input-pincode-block">
+                                  <span class="common-sprite-opt course-icon"></span>
+                                </span>
+                                <input id="Email" name="email" class="form-control input-lg validate[custom[email]]" type="email" placeholder="Enter Email" data-errormessage-value-missing="Please enter your email." />
+                              </div>
+                              <p class="small text-muted">We don't misuse your email.</p>
+                            </div>
+                          </div>
+                          <div class="form-group-lp" id="tuition-need-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon input-pincode-block">
+                                  <span class="common-sprite-opt course-icon"></span>
+                                </span>
+                                <input id="Course" name="courses" class="form-control input-lg validate[required]" type="text" placeholder="Enter Course" data-errormessage-value-missing="Please enter course. Eg. Class I CBSE or Class X or B.Tech etc." />
+                              </div>
+                              <p class="small text-muted">eg. Class I CBSE or Class X or B.Tech etc.</p>
+                            </div>
+                          </div>
+                          <div class="form-group-lp" id="tuition-need-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon input-pincode-block">
+                                  <span class="common-sprite-opt subject-icon"></span>
+                                </span>
+                                <input id="Subject" name="subjects" class="form-control input-lg validate[required]" type="text" placeholder="Enter Subjects" data-errormessage-value-missing="Please enter subjects. Eg. maths, physics or all subjects etc." />
+                              </div>
+                              <p class="small text-muted">eg. maths, physics or all subjects etc.</p>
+                            </div>
+                          </div>
+                          {% comment %} //*
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div id="submitButtiner" class="text-center">
+                                <button
+                                  id=""
+                                  onclick="{steponedone
+                                  ()}"
+                                  class="btn btn-info btn-orange btn-lg"
+                                >
+                                  Find Students Now
+                                </button>
+                                <img id="imgLoading" style="display: none" src="https://static.hometutorsite.com/content/images/preloaders/preloader.gif" />
+                              </div>
+                            </div>
+                          </div>
+                          *// {% endcomment %}
+                          <div class="next">
+                            <div class="inner" style="background: green; color: white; padding: 10px; text-align: center" onclick="steponedone()">Submit</div>
+                          </div>
+                        </div>
+
+                        <div class="step2" id="step2" style="display: none">
+                          <input type="hidden" id="LandingInfoId" name="LandingInfoId" value="909748" />
+                          <div class="get-in-touch">
+                            <p class="looking-for">Please Tell About Yourself</p>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label"> Qualifications <span class="red">*</span> </label>
+                            <div class="controls">
+                              <div class="QualificationsformError parentFormlanding-page-form formError" style="opacity: 0.87; position: absolute; top: 137.225px; left: 370.2px; margin-top: -35px">
+                                <div class="formErrorContent">Qualification is required<br /></div>
+                                <div class="formErrorArrow">
+                                  <div class="line10"><!-- --></div>
+                                  <div class="line9"><!-- --></div>
+                                  <div class="line8"><!-- --></div>
+                                  <div class="line7"><!-- --></div>
+                                  <div class="line6"><!-- --></div>
+                                  <div class="line5"><!-- --></div>
+                                  <div class="line4"><!-- --></div>
+                                  <div class="line3"><!-- --></div>
+                                  <div class="line2"><!-- --></div>
+                                  <div class="line1"><!-- --></div>
+                                </div>
+                              </div>
+                              <input
+                                class="form-control input-xlarge input-browse"
+                                data-validation-engine="validate[required]"
+                                data-errormessage-value-missing="Qualification is required"
+                                data-val="true"
+                                data-val-length="The field Qualifications must be a string with a maximum length of 256."
+                                data-val-length-max="256"
+                                id="Qualifications"
+                                name="qualification"
+                                placeholder="Qualifications"
+                                type="text"
+                                value=""
+                              />
+                              <span class="field-validation-valid" data-valmsg-for="Qualifications" data-valmsg-replace="true"></span>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div>
+                                <div class="label-left">
+                                  <span>Gender</span>
+                                </div>
+
+                                <div class="switch-toggle well">
+                                  <input id="radioMaleLp" name="gender" type="radio" value="male" checked="" />
+                                  <label for="radioMaleLp" onclick=""><img class="img-responsive common-sprite-opt gender-male-sm-icon" height="1" width="1" title="" alt="Home Tutor Site tuition gender" src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" /> Male</label>
+
+                                  <input id="radioFemaleLp" name="gender" type="radio" value="female" />
+                                  <label for="radioFemaleLp" onclick=""
+                                    ><img class="img-responsive common-sprite-opt gender-female-sm-icon" height="1" width="1" title="" alt="Home Tutor Site tuition gender" src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" /> Female</label
+                                  >
+
+                                  <a class="btn btn-light-blue"></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label"> Age in Years </label>
+                            <div class="controls controls-multiselect">
+                              <select class="form-control input-xlarge" data-val="true" data-val-number="The field Age must be a number." data-val-required="The Age field is required." id="Age" name="age">
+                                <option selected="selected" value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                                <option value="60">60</option>
+                                <option value="61">61</option>
+                                <option value="62">62</option>
+                                <option value="63">63</option>
+                                <option value="64">64</option>
+                                <option value="65">65</option>
+                                <option value="66">66</option>
+                                <option value="67">67</option>
+                                <option value="68">68</option>
+                                <option value="69">69</option>
+                                <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
+                                <option value="81">81</option>
+                                <option value="82">82</option>
+                                <option value="83">83</option>
+                                <option value="84">84</option>
+                                <option value="85">85</option>
+                                <option value="86">86</option>
+                                <option value="87">87</option>
+                                <option value="88">88</option>
+                                <option value="89">89</option>
+                                <option value="90">90</option>
+                                <option value="91">91</option>
+                                <option value="92">92</option>
+                                <option value="93">93</option>
+                                <option value="94">94</option>
+                                <option value="95">95</option>
+                                <option value="96">96</option>
+                                <option value="97">97</option>
+                                <option value="98">98</option>
+                                <option value="99">99</option>
+                                <option value="100">100</option>
+                              </select>
+                              <span class="field-validation-valid" data-valmsg-for="Age" data-valmsg-replace="true"></span>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label"> Experience in Years </label>
+                            <div class="controls controls-multiselect">
+                              <select class="form-control input-xlarge" data-role="tagsinput" data-val="true" data-val-number="The field Experience must be a number." data-val-required="The Experience field is required." id="Experience" name="experience">
+                                <option selected="selected" value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                              </select>
+                              <span class="field-validation-valid" data-valmsg-for="Experience" data-valmsg-replace="true"></span>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label"> Preferred Time <span class="red">*</span> </label>
+                            <div class="controls controls-multiselect">
+                              <select class="form-control input-xlarge" data-errormessage-value-missing="Preferred time is required" data-validation-engine="validate[required]" id="PreferredTime" name="preferred_timing">
+                                <option value="">--- Select Preferred Time ---</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                                <option value="Evening">Evening</option>
+                                <option selected="selected" value="AnyTime">AnyTime</option>
+                              </select>
+                              <span class="field-validation-valid" data-valmsg-for="PreferredTime" data-valmsg-replace="true"></span>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label"> Hourly Price <span class="red">*</span> </label>
+                            <div class="controls">
+                              <input
+                                class="form-control input-xlarge"
+                                data-errormessage-value-missing="Hourly price is required and should be number."
+                                data-val="true"
+                                data-val-number="The field HourlyPrice must be a number."
+                                data-val-required="The HourlyPrice field is required."
+                                data-validation-engine="validate[required,funcCall[validateHourlyPrice]],custom[number],minSize[2],maxSize[8]"
+                                id="HourlyPrice"
+                                name="hourly_price"
+                                placeholder="e.g. 200"
+                                type="text"
+                                value=""
+                              />
+                              <span class="field-validation-valid" data-valmsg-for="HourlyPrice" data-valmsg-replace="true"></span>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <label class="control-label">
+                              Tuition Location <span class="red">*</span> :
+                              <b>Choose multiple if you are flexible</b>
+                            </label>
+                            <div class="controls checkbox-block">
+                              <div class="radio-block-fullwidth">
+                                <div class="form-control">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input checked="true" class="input-small" data-val="true" data-val-required="The IsAtStudentHome field is required." id="IsAtStudentHome" name="IsAtStudentHome" type="checkbox" value="true" />
+                                      At Students Home
+                                    </label>
+                                  </div>
+                                  <div class="checkbox">
+                                    <label>
+                                      <input class="input-small" data-val="true" data-val-required="The IsAtTutorHome field is required." id="IsAtTutorHome" name="IsAtTutorHome" type="checkbox" value="true" />
+                                      At Tutor's Home
+                                    </label>
+                                  </div>
+                                  <div class="checkbox">
+                                    <label>
+                                      <input class="" data-val="true" data-val-required="The IsAtInstitute field is required." id="IsAtInstitute" name="IsAtInstitute" type="checkbox" value="true" />
+                                      At Institute
+                                    </label>
+                                  </div>
+                                  <div class="checkbox">
+                                    <label>
+                                      <input class="" data-val="true" data-val-required="The IsOnlineTuition field is required." id="IsOnlineTuition" name="IsOnlineTuition" type="checkbox" value="true" />
+                                      Online Tuition
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="inputPassword"> About Me </label>
+                            <div class="controls">
+                              <textarea
+                                class="form-control input-xlarge"
+                                cols="50"
+                                data-role="tagsinput"
+                                data-val="true"
+                                data-val-length="The field TutorDescription must be a string with a maximum length of 4096."
+                                data-val-length-max="4096"
+                                id="TutorDescription"
+                                name="about_me"
+                                placeholder="Please enter brief profile information"
+                                rows="5"
+                              ></textarea>
+                              <span class="field-validation-valid" data-valmsg-for="TutorDescription" data-valmsg-replace="true"></span>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="text-center">
+                                <div class="Submit" style="padding: 4px; border: 2px solid black; display: flex; width: 100%; justify-content: center">
+                                  <div class="btn" onclick="steptwodone()">Submit step 2</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="step3" id="step3" style="display: none">
+                          <input type="hidden" id="LandingInfoId" name="LandingInfoId" value="909748" />
+                          <div class="get-in-touch">
+                            <p class="looking-for">Please Enter Your Address Details</p>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon">
+                                  <span class="common-sprite-opt contact-name"></span>
+                                </span>
+                                <div class="PincodeformError parentFormlanding-page-form formError" style="opacity: 0.87; position: absolute; top: 0px; left: 320.2px; margin-top: -51px">
+                                  <div class="formErrorContent">Please enter your Pincode.<br /></div>
+                                  <div class="formErrorArrow">
+                                    <div class="line10"><!-- --></div>
+                                    <div class="line9"><!-- --></div>
+                                    <div class="line8"><!-- --></div>
+                                    <div class="line7"><!-- --></div>
+                                    <div class="line6"><!-- --></div>
+                                    <div class="line5"><!-- --></div>
+                                    <div class="line4"><!-- --></div>
+                                    <div class="line3"><!-- --></div>
+                                    <div class="line2"><!-- --></div>
+                                    <div class="line1"><!-- --></div>
+                                  </div>
+                                </div>
+                                <input id="Pincode" name="pincode" class="form-control input-lg validate[required]" type="text" placeholder="Enter Pincode" data-errormessage-value-missing="Please enter your Pincode." pattern="[0-9]{0,9}" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon">
+                                  <span class="common-sprite-opt contact-name"></span>
+                                </span>
+                                <input id="City" name="city" class="form-control input-lg validate[required]" type="text" placeholder="Enter City" data-errormessage-value-missing="Please enter your city." pattern=".{0,64}" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon">
+                                  <span class="common-sprite-opt contact-name"></span>
+                                </span>
+                                <input id="Locality" name="locality" class="form-control input-lg validate[required]" type="text" placeholder="Enter Locality" data-errormessage-value-missing="Please enter your locality." pattern=".{0,128}" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon">
+                                  <span class="common-sprite-opt contact-name"></span>
+                                </span>
+                                <input id="address" name="address" class="form-control input-lg validate[required]" type="text" placeholder="Enter Address" data-errormessage-value-missing="Please enter your locality." pattern=".{0,128}" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group-lp">
+                            <div class="">
+                              <div class="text-center">
+                                <div id="" class="text-center">
+                                  <div class="butn" style="display: flex; justify-content: center; border: 2px solid black">
+                                    <div class="btn" onclick="stepthreedone()">Submit step 3</div>
+                                  </div>
+                                  <img id="imgLoadingGetLocationInfo" style="display: none" src="https://static.hometutorsite.com/content/images/preloaders/preloader.gif" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="text-center small">
+                            By signing up you agree to our
+                            <a href="#">Terms and Conditions</a>
+                          </p>
+                          <br />
+                          <p class="text-center medium">
+                            Already a member?
+                            <a href="/signin/">Login</a>
+                          </p>
+                        </div>
+
+                        <div>
+                          <div class="step4" id="step4" style="display: none">
+                            <input type="hidden" id="LandingInfoId" name="LandingInfoId" value="909748" />
+                            <div class="get-in-touch">
+                              <p class="looking-for">Profile Information</p>
+                            </div>
+                            <div class="form-group-lp">
+                              <div class="">
+                                <div class="input-group margin-bottom-sm">
+                                  <span class="input-group-addon">
+                                    <span class="common-sprite-opt contact-name"></span>
+                                  </span>
+                                  <div class="PincodeformError parentFormlanding-page-form formError" style="opacity: 0.87; position: absolute; top: 0px; left: 320.2px; margin-top: -51px">
+                                    <div class="formErrorContent">Password<br /></div>
+                                    <div class="formErrorArrow">
+                                      <div class="line10"><!-- --></div>
+                                      <div class="line9"><!-- --></div>
+                                      <div class="line8"><!-- --></div>
+                                      <div class="line7"><!-- --></div>
+                                      <div class="line6"><!-- --></div>
+                                      <div class="line5"><!-- --></div>
+                                      <div class="line4"><!-- --></div>
+                                      <div class="line3"><!-- --></div>
+                                      <div class="line2"><!-- --></div>
+                                      <div class="line1"><!-- --></div>
+                                    </div>
+                                  </div>
+                                  <input id="Pincode" name="password" class="form-control input-lg" type="text" placeholder="password" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group-lp">
+                              <div class="">
+                                <div class="input-group margin-bottom-sm">
+                                  <span class="input-group-addon">
+                                    <span class="common-sprite-opt contact-name"></span>
+                                  </span>
+                                  <input id="City" name="cpassword" class="form-control input-lg" type="text" placeholder="Confirm password" data-errormessage-value-missing="Please enter your city." pattern=".{0,64}" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group-lp">
+                              <div class="">
+                                <div class="input-group margin-bottom-sm">
+                                  <span class="input-group-addon">
+                                    <span class=" "> profile</span>
+                                  </span>
+                                  <input id="Locality" name="profile_img" class="form-control input-lg" type="file" placeholder="profile" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group-lp">
+                              <div class="">
+                                <div class="text-center">
+                                  <div id="getLocationInfoSubmitButtonContainer" class="text-center">
+                                    <button id="landing-get-location-info-submit" type="submit" class="btn btn-info btn-orange btn-lg">Step 4</button>
+                                    <img id="imgLoadingGetLocationInfo" style="display: none" src="https://static.hometutorsite.com/content/images/preloaders/preloader.gif" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text-center small">
+                              By signing up you agree to our
+                              <a href="#">Terms and Conditions</a>
+                            </p>
+                            <br />
+                            <p class="text-center medium">
+                              Already a member?
+                              <a href="/">Login</a>
+                            </p>
+                          </div>
+                        </div>
+
+                        <script>
+                          var steponedone = () => {
+                            console.log("function is called");
+                            var elm = document.getElementById("step1");
+                            elm.style.display = "none";
+                            var elm2 = document.getElementById("step2");
+                            elm2.style.display = "block";
+                          };
+                          var steptwodone = () => {
+                            var elm2 = document.getElementById("step2");
+                            elm2.style.display = "none";
+                            var elm3 = document.getElementById("step3");
+                            elm3.style.display = "block";
+                          };
+                          var stepthreedone = () => {
+                            console.log("step three function called");
+                            var elm3 = document.getElementById("step3");
+                            elm3.style.display = "none";
+                            var elm4 = document.getElementById("step4");
+                            elm4.style.display = "block";
+                          };
+                        </script>
+                        <p class="text-center small">
+                          By signing up you agree to our
+                          <a href="#">Terms and Conditions</a>
+                        </p>
+                        <br />
+                        <p class="text-center medium">Already a member? <a href="/">Login</a></p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-7 col-md-pull-5">
+                  <div id="students-info-lp" class="text-center">
+                    <h2>Find Best Home Tutors / Online Tutors.</h2>
+
+                    <img src="https://static.hometutorsite.com/content/images/landing/student-reg-steps.jpg" class="img-responsive" />
+                    <br />
+                    <div class="text-center">
+                      <img src="https://static.hometutorsite.com/content/images/landing/tuition-image.jpg" class="img-responsive" />
+                    </div>
+                    <br />
+                    <p class="lp-lead text-center lp-lead1">
+                      Home Tuition is the #1 secret of
+                      <b>ACADEMIC EXCELLENCE</b>
+                    </p>
+                  </div>
+
+                  <div id="tutors-info-lp" class="text-center">
+                    <h2>Find Home Tuition / Online Tuition Part Time Jobs.</h2>
+                    <img src="https://static.hometutorsite.com/content/images/landing/tutor-reg-steps.jpg" class="img-responsive" />
+
+                    <br />
+                    <div class="text-center">
+                      <img src="https://static.hometutorsite.com/content/images/landing/tuition-image.jpg" class="img-responsive" />
+                    </div>
+                    <br />
+                    <p class="lp-lead text-center lp-lead1">You focus on teaching, We focus on finding students for you.</p>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        var isTutor = false;
+
+        function validateIndianMobileNumber(field, rules, i, options) {
+          console.log("in validateIndianMobileNumber");
+          var isValidMobile = true;
+
+          if ($("#Mobile").length) {
+            var indianMobileNumber = $("#Mobile").val();
+            console.log("mobilenumber :" + indianMobileNumber);
+
+            if (!isNumeric(indianMobileNumber)) {
+              isValidMobile = false;
+            }
+            console.log("length : " + indianMobileNumber.length);
+            if (indianMobileNumber.length != 10) {
+              isValidMobile = false;
+            }
+
+            if (indianMobileNumber.includes(".") || indianMobileNumber.includes("+") || indianMobileNumber.includes("-")) {
+              isValidMobile = false;
+            }
+          }
+
+          if (!isValidMobile) {
+            return "Enter 10 digit mobile number.";
+          }
+        }
+
+        function isNumeric(n) {
+          return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+
+        function LandingAjaxBegin() {
+          console.log("In LandingAjaxBegin");
+          if ($("#submitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#btn-signup-lp").hide();
+            $("#imgLoading").show();
+          }
+        }
+        function LandingAccountAlreadyExist() {
+          console.log("Account Already Exist");
+          if ($("#getExistingInfoSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#landing-get-existing-user-submit").hide();
+            $("#imgLoadingExistingUserInfo").show();
+          }
+        }
+        function LandingAccountEmailAlreadyExist() {
+          console.log("Account Email Already Exist");
+          if ($("#getExistingAccountSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#ExistingAccount").hide();
+            $("#imgLoadingExistingAccount").show();
+          }
+          if ($("#getUpdateMobileNumberSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#UpdateMobileNumber").hide();
+            $("#imgLoadingUpdateMobileNumber").show();
+          }
+        }
+
+        function LandingAuthenticateExistingAccount() {
+          console.log("Authenticate Existing Account");
+          if ($("#getAuthenticateExistingMobileSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#AuthenticateMobile").hide();
+            $("#imgLoadingAuthenticateExistingMobile").show();
+          }
+          if ($("#getAuthenticateExistingEmailSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#AuthenticateEmail").hide();
+            $("#imgLoadingAuthenticateExistingEmail").show();
+          }
+        }
+
+        function LandingConfirmExistingAccountEmailSubmit() {
+          console.log("Landing Confirm Existing Account Email");
+          if ($("#confirmConfirmExistingAccountEmailSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#ConfirmExistingAccountEmail").hide();
+            $("#imgLoadingConfirmExistingAccountEmail").show();
+          }
+        }
+
+        function LandingConfirmExistingAccountMobileSubmit() {
+          console.log("Landing Confirm Existing Account Mobile");
+          if ($("#ConfirmExistingAccountMobileSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#ConfirmExistingAccountMobile").hide();
+            $("#imgLoadingConfirmExistingAccountMobile").show();
+          }
+        }
+
+        function LandingGetUpdateLocationInfoSubmit() {
+          console.log("Get Update Location Info");
+          if ($("#upateLocationInfoSubmitButtonContainer").length) {
+            console.log("Showing loader");
+            $("#landing-update-location-info-submit").hide();
+            $("#imgLoadingUpdateLocationInfo").show();
+          }
+        }
+
+        function UpdateLocalitySuccess() {
+          window.location = "https://www.hometutorsite.com/home/pricing/";
+        }
+
+        function LandingStudentStep2Submit() {
+          console.log("In LandingStudentStep2Submit");
+          //qp('track', 'StudentSubmit');  // quora tracking code
+          if ($("#studentStep2SubmitButtonContainer").length) {
+            console.log("Showing loader for Student Step2 Submit");
+            $("#landing-student-step2-submit").hide();
+            $("#imgLoadingStudentStep2").show();
+          }
+        }
+
+        function LandingGetLocationInfoSubmit() {
+          console.log("In LandingGetLocationInfoSubmit");
+          if ($("#getLocationInfoSubmitButtonContainer").length) {
+            console.log("Showing loader for Get Location Info Submit");
+            $("#landing-get-location-info-submit").hide();
+            $("#imgLoadingGetLocationInfo").show();
+          }
+        }
+
+        function LandingConfirmMobileSubmit() {
+          console.log("In LandingConfirmMobileSubmit");
+          if ($("#confirmMobileSubmitButtonContainer").length) {
+            console.log("Showing loader for Confirm Mobile Submit");
+            $("#landing-confirm-mobile-submit").hide();
+            $("#imgLoadingConfirmMobile").show();
+          }
+        }
+
+        function TutorStep2Submit() {
+          console.log("In TutorStep2Submit");
+          //qp('track', 'TutorSubmit');  // quora tracking code
+          if ($("#tutorStep2SubmitButtonContainer").length) {
+            console.log("Showing loader for Tutor Step2 Submit");
+            $("#landing-tutor-step2-submit").hide();
+            $("#imgLoadingTutorStep2").show();
+          }
+        }
+
+        function LandingTutorStep3Submit() {
+          console.log("In TutorStep3Submit");
+          if ($("#tutorStep3SubmitButtonContainer").length) {
+            console.log("Showing loader for Tutor Step3 Submit");
+            $("#landing-tutor-step3-submit").hide();
+            $("#imgLoadingTutorStep3").show();
+          }
+        }
+
+        function ChoosePasswordSubmit() {
+          console.log("In ChoosePasswordSubmit");
+          //qp('track', 'TutorSubmit');  // quora tracking code
+          if ($("#choosePasswordSubmitButtonContainer").length) {
+            console.log("Showing loader for Tutor Step2 Submit");
+            $("#landing-choose-password-submit").hide();
+            $("#imgLoadingChoosePassword").show();
+          }
+          $("#landing-page-choose-password-form").validationEngine();
+        }
+        function ChoosePasswordSuccess() {
+          console.log("In Choose Password success");
+
+          //if($("#UserType").val() == "student")
+          //{
+          //    console.log("In Choose Password student");
+          //    $('#timeSlotStartTime').timepicker();
+          //    $('#timeSlotEndTime').timepicker();
+          //}
+
+          if ($("#timeSlotStartTime").length) $("#timeSlotStartTime").timepicker();
+
+          if ($("#timeSlotEndTime").length) $("#timeSlotEndTime").timepicker();
+
+          ScrollToRegistrationIsFree();
+
+          if ($("#Premium").length) {
+            $("#Premium").focus();
+          }
+        }
+
+        function GetTuitionDetailsBegin() {
+          console.log("In GetTuitionDetails");
+          if ($("#tuitiondetailsubmitButtonContainer").length) {
+            console.log("Showing loader for Tutor Get Tuition Details");
+            $("#get-tuition-detail").hide();
+            $("#gettuitiondetailimgLoading").show();
+          }
+        }
+
+        function GetPaymentPreference() {
+          console.log("In GetPaymentPreference");
+          if ($("#paymentpreferencesubmitButtonContainer").length) {
+            console.log("Showing loader for Tutor Get Payment Preference");
+            $("#add-money-button").hide();
+            $("#paymentpreferenceimgLoading").show();
+          }
+        }
+
+        function CalculateAmountToPay(noOfClasses) {
+          var walletBalance = parseFloat($("#WalletBalance").val());
+          var tuitionTimeInHours = parseFloat($("#TuitionTimeInHours").val());
+          var hourlyRate = parseFloat($("#HourlyRate").val());
+
+          var amount = 0.0;
+          var commission = 0.0;
+          var totalAmount = 0.0;
+          var amountToPay = 0.0;
+
+          amount = noOfClasses * tuitionTimeInHours * hourlyRate;
+          $("#SpanAmount").text(amount.toString());
+
+          commission = amount * 0.1;
+          $("#SpanCommission").text(commission.toString());
+
+          totalAmount = amount + commission;
+
+          $("#SpanTotalAmount1").text(totalAmount.toString());
+          $("#SpanTotalAmount2").text(totalAmount.toString());
+
+          if (walletBalance == 0) amountToPay = totalAmount;
+          else if (walletBalance < totalAmount) amountToPay = totalAmount - walletBalance;
+          else if (walletBalance > totalAmount) amountToPay = 0;
+
+          $("#SpanAmountToPay").text(amountToPay.toString());
+        }
+
+        function InitializePaymentPreferenceScripts() {
+          $("input[name='PaymentPreference']:radio").on("change", function () {
+            console.log($(this).val());
+
+            var noOfClasses = 0;
+
+            if ($("input:radio[name='PaymentPreference']:checked").val() == "month") {
+              console.log("in one month");
+              noOfClasses = parseInt($("#ClassesInOneMonth").val());
+              $("#NoOfClasses").val(noOfClasses.toString());
+              $("#NoOfClasses").attr("disabled", "disabled");
+            } else {
+              console.log("in classes");
+              noOfClasses = parseInt($("#InitialNoOfClasses").val());
+              $("#NoOfClasses").val(noOfClasses.toString());
+              $("#NoOfClasses").removeAttr("disabled", "disabled");
+            }
+
+            CalculateAmountToPay(noOfClasses);
+          });
+
+          $("#NoOfClasses").on("input propertychange paste", function () {
+            var noOfClasses = 0;
+            noOfClasses = parseInt($("#NoOfClasses").val());
+            noOfClasses = noOfClasses || 0;
+            if (noOfClasses == 0) noOfClasses = 10;
+            CalculateAmountToPay(noOfClasses);
+          });
+
+          $("#NoOfClasses").attr("disabled", "disabled");
+          $("#RegistrationIsFree").hide();
+        }
+
+        $(document).ready(function () {
+          var onlineQueryStringParam = getParameterByName("online");
+
+          var utm_campaign = getParameterByName("utm_campaign");
+          var utm_source = getParameterByName("utm_source");
+          var utm_medium = getParameterByName("utm_medium");
+          var utm_content = getParameterByName("utm_content");
+          var utm_term = getParameterByName("utm_term");
+
+          document.getElementById("utm_campaign").value = utm_campaign;
+          document.getElementById("utm_source").value = utm_source;
+          document.getElementById("utm_medium").value = utm_medium;
+          document.getElementById("utm_content").value = utm_content;
+          document.getElementById("utm_term").value = utm_term;
+
+          console.log("Online : " + onlineQueryStringParam);
+
+          if ($("#online").length) {
+            $("#online").val(onlineQueryStringParam);
+          }
+
+          if ($("#radioStudentLanding").prop("checked", true)) {
+            $("span#looking-for").html("Tutors");
+            $("#btn-signup-lp").text("Get Free Demo Class");
+
+            $("#students-testimonials-lp").show();
+            $("#students-info-lp").show();
+
+            $("#tutors-testimonials-lp").hide();
+            $("#tutors-info-lp").hide();
+
+            $("#subject-lp").show();
+            $("#tuition-need-lp").show();
+
+            $("#Course").attr("placeholder", "Course you need help with");
+            $("#Subject").attr("placeholder", "Subject you need help with");
+          } else if ($("#radioTutorLanding").prop("checked", true)) {
+            $("span#looking-for").html("Students");
+            $("#btn-signup-lp").text("Find Students Now!");
+
+            $("#students-testimonials-lp").hide();
+            $("#students-info-lp").hide();
+
+            $("#tutors-testimonials-lp").show();
+            $("#tutors-info-lp").show();
+
+            $("#subject-lp").show();
+            $("#tuition-need-lp").show();
+
+            $("#Course").attr("placeholder", "Courses you teach");
+            $("#Subject").attr("placeholder", "Subjects you teach");
+          }
+
+          $("#radioStudentLanding").on("click", function () {
+            $("span#looking-for").html("Tutors");
+            $("#btn-signup-lp").text("Get Free Demo Class");
+
+            $("#students-testimonials-lp").show();
+            $("#students-info-lp").show();
+
+            $("#tutors-testimonials-lp").hide();
+            $("#tutors-info-lp").hide();
+
+            $("#subject-lp").show();
+            $("#tuition-need-lp").show();
+
+            $("#Course").attr("placeholder", "Course you need help with");
+            $("#Subject").attr("placeholder", "Subject you need help with");
+          });
+          $("#radioTutorLanding").on("click", function () {
+            $("span#looking-for").html("Students");
+            $("#btn-signup-lp").text("Find Students Now!");
+
+            $("#students-testimonials-lp").hide();
+            $("#students-info-lp").hide();
+
+            $("#tutors-testimonials-lp").show();
+            $("#tutors-info-lp").show();
+
+            $("#subject-lp").show();
+            $("#tuition-need-lp").show();
+
+            $("#Course").attr("placeholder", "Courses you teach");
+            $("#Subject").attr("placeholder", "Subjects you teach");
+          });
+
+          $("#btn-upload-profile-pic").submit(function () {
+            console.log("profile pic submit");
+            if (typeof variable !== "croppedImageUploaded") {
+              console.log("croppedImageUploaded defined");
+              if (croppedImageUploaded == false) {
+                console.log("in croppedImageUploaded is false condition");
+                if (typeof cropProfilePic == "function") {
+                  console.log("calling cropProfilePic");
+                  cropProfilePic();
+                }
+              }
+            }
+          });
+
+          var user = getParameterByName("user");
+          if (!(user === undefined || user === null)) {
+            if (user == "tutor") {
+              //console.log("triggering tutor radio click");
+              //$("#radioTutorLanding input:radio").trigger("click");
+
+              //$("#radioTutorLanding").attr("checked","checked")
+
+              tutorRadioButton = document.getElementById("radioTutorLanding");
+              tutorRadioButton.checked = true;
+
+              $("span#looking-for").html("Students");
+              $("#btn-signup-lp").text("Find Students Now!");
+
+              $("#students-testimonials-lp").hide();
+              $("#students-info-lp").hide();
+
+              $("#tutors-testimonials-lp").show();
+              $("#tutors-info-lp").show();
+
+              $("#subject-lp").show();
+              $("#tuition-need-lp").show();
+
+              $("#Course").attr("placeholder", "Courses you teach");
+              $("#Subject").attr("placeholder", "Subjects you teach");
+            }
+          }
+
+          $("#Name").focus();
+        });
+
+        function TrackGoogleAdwordsConversions() {
+          /* Conversion Tracking End */
+
+          /* Facebook conversion tracking */
+          //fbq('track', 'CompleteRegistration');
+          /* Facebook conversion tracking end */
+
+          ScrollToRegistrationIsFree();
+
+          if ($("#ExistingPassword").length) {
+            $("#ExistingPassword").focus();
+          }
+        }
+
+        function TutorStep2Success() {
+          //LoadCropImageFunctionality();
+          isTutor = true;
+
+          ScrollToRegistrationIsFree();
+        }
+
+        function ConfirmMobileSuccess() {
+          //if (isTutor == true) {
+          //    LoadCropImageFunctionality();
+          //}
+          ScrollToRegistrationIsFree();
+
+          if ($("#Password").length) {
+            $("#Password").focus();
+          }
+        }
+
+        function ScrollToRegistrationIsFree() {
+          /* Scroll to Registration Is Free */
+          if ($("#RegistrationIsFree").length) {
+            goToByScroll("RegistrationIsFree");
+          }
+          if ($("#rightSideForm").find(":text, textarea").filter(":visible:enabled").first().length) {
+            $("#rightSideForm").find(":text, textarea").filter(":visible:enabled").first().focus();
+          }
+          if ($("#landing-page-form").length) {
+            $("#landing-page-form").validationEngine();
+          }
+        }
+
+        function resendVerificationCode(landingInfoId) {
+          var resendCodeUrl = location.protocol + "//" + location.host + "/home/resendverificationcode?landingInfoId=" + landingInfoId;
+
+          $.ajax({
+            url: resendCodeUrl,
+            type: "GET",
+            success: function (data) {
+              //alert('Verification Code was sent again');
+              BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: "Resend Verification Code - Success",
+                message: "Verification code was sent successfully.",
+              });
+            },
+            error: function (data, status, jqXhr) {
+              //alert('There was an error.');
+              BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_DANGER,
+                title: "Resend Verification Code - Fail",
+                message: "There was a problem sending Verification code.",
+              });
+            },
+          }); // end $.ajax
+        }
+
+        // This is a functions that scrolls to #{blah}link
+        function goToByScroll(id) {
+          // Scroll
+          $("html,body").animate(
+            {
+              scrollTop: $("#" + id).offset().top,
+            },
+            "slow"
+          );
+        }
+
+        function SkipImageUpload() {
+          var skipImageUploadUrl = location.protocol + "//" + location.host + "/landing/skipimageupload?profileId=" + $("#ProfileId").val();
+
+          $.ajax({
+            url: skipImageUploadUrl,
+            type: "GET",
+            success: function (data) {
+              $("#rightSideForm").html(data);
+
+              ScrollToRegistrationIsFree();
+            },
+            error: function (data, status, jqXhr) {
+              //alert('There was an error.');
+              BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_DANGER,
+                title: "Error while skipping image upload.",
+                message: "There was an error while skipping image upload.",
+              });
+            },
+          }); // end $.ajax
+        }
+
+        function SelectTuitionType(tuitionId, tuitionType) {
+          if (tuitionType == "home") {
+            $("#homeTuitionButton").hide();
+            $("#imgLoadingHomeTuition").show();
+          } else {
+            $("#onlineTuitionButton").hide();
+            $("#imgLoadingOnlineTuition").show();
+          }
+
+          var selectHomeTuitionUrl = location.protocol + "//" + location.host + "/landing/selecttuitiontype?tuitionId=" + tuitionId + "&tuitionType=" + tuitionType;
+
+          $.ajax({
+            url: selectHomeTuitionUrl,
+            type: "GET",
+            success: function (data) {
+              $("#rightSideForm").html(data);
+              ScrollToRegistrationIsFree();
+
+              //$('#datetimepicker3').datetimepicker({
+              //    format: 'LT'
+              //});
+
+              //$('#datetimepicker4').datetimepicker({
+              //    format: 'LT'
+              //});
+            },
+            error: function (data, status, jqXhr) {
+              //alert('There was an error.');
+              BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_DANGER,
+                title: "Error while setting tuition type.",
+                message: "There was an error while setting tuition type.",
+              });
+            },
+          }); // end $.ajax
+        }
+
+        function validateHourlyPrice(field, rules, i, options) {
+          console.log("In validateHourlyPrice");
+          if ($("#HourlyPrice").length) {
+            if ($("#HourlyPrice").val().indexOf(",") > -1) {
+              console.log("Hourly price contains comma");
+              return "Comma not allowed in Hourly Price.";
+            }
+          }
+        }
+      </script>
+
+      <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+      <script src="/Content/js/cropbox.js"></script>
+      <script src="https://static.hometutorsite.com/content/js/jquery.ui.touch-punch-min.js"></script>
+      <script src="/Content/js/cropimage-min.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+
+      <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+    </div>
+
+    {% comment %}
+    <div id="footer" class="footer-lp">
+      <div id="footer-inner">
+        <div class="container credit">
+          <p class="muted credit">
+            &copy; Copyright <a href="#">Home Tutor Site </a>All rights reserved<span class="vb"></span><br class="footer-br" />
+            <span class="privacy-policy"><a href="#">Privacy Policy</a><span class="privacy-devider">|</span><a href="#">Terms & Conditions</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endcomment %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="https://static.hometutorsite.com/content/js/htc-common-08apr16.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        var conversion_fired = false;
+        jQuery("#btn-signup-lp").click(function () {
+          gtag("set", "user_data", {
+            email: jQuery("#Email").val(),
+          });
+        });
+        $(document).on("ajaxSuccess", function (event, xhr, settings) {
+          if (jQuery('.looking-for:contains("Please Enter Tuition Requirements")').is(":visible") && !conversion_fired) {
+            gtag("event", "conversion", {
+              send_to: "AW-955026931/o3GTCJvCl2oQ85uyxwM",
+            });
+            conversion_fired = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

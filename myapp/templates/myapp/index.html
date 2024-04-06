@@ -1,0 +1,754 @@
+{% extends 'myapp/base.html' %}{% load static %} {% block content %}
+
+<div class="container">
+    <div class="starter-template">
+      <div class="container-fluid main-image1">
+        <div class="social-buttons-dropdown btn-group visible-xs">
+          <div class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              id="social-buttons-dropdown"
+            >
+              <div class="share-icon-mobile">
+                <span class="common-sm-sprite share-icon-black"></span>
+              </div>
+            </a>
+            <ul
+              class="dropdown-menu social-interest-btn"
+              aria-labelledby="social-buttons-dropdown"
+            >
+              <li>
+                <div class="fb">
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://www.hometutorsite.com"
+                    target="_blank"
+                    ><img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive common-sm-sprite fb-share"
+                      alt="Home Tutor Site facebook share"
+                      width="1"
+                      height="1"
+                    />
+                    Share</a
+                  >
+                  <div class="social-count">
+                    <span>10</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="google">
+                  <a
+                    href="https://plus.google.com/share?url=https://www.hometutorsite.com"
+                    target="_blank"
+                    ><span>G+1</span></a
+                  >
+                  <div class="social-count">
+                    <span>10</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="twitter">
+                  <a
+                    href="https://twitter.com/intent/tweet?url=https://www.hometutorsite.com/?text=TEXT&amp;via=YOURTWITTERACCOUNTNAME"
+                    target="_blank"
+                    ><img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive common-sm-sprite twitter-tweet"
+                      alt="Home Tutor Site facebook share"
+                      width="1"
+                      height="1"
+                    />
+                    Tweet</a
+                  >
+                  <div class="social-count">
+                    <span>10</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="container"
+          style="
+            border: 2px solid #fff;
+            box-shadow: 0 0 2px #9b9a9a;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          "
+        >
+          <h2 class="captionColor captionColor1">
+            Search Tuitions/Tutors Near You
+          </h2>
+          <div id="" class="be-modules clearfix">
+            <div id="" class="be-flights">
+              <form action=" {% url "search" %}" id="homeSearchForm" method="POST">
+                {% csrf_token %}
+        
+                <div class="journey-details clearfix">
+                  <div class="city-search">
+                    <div
+                      id="CitySearchContainer"
+                      class="pax-details ddn-parent"
+                    >
+                      <input type="text" placeholder="enter your city"  class = "input"style="padding:6.5px 2px; border:none; outline:none;" name="city">
+                    </div>
+                  </div>
+                  <div class="tuition-type">
+                    <div id="" class="pax-details ddn-parent">
+                      <select
+                        name="searchTypeDropdown"
+                        id="searchTypeDropdown"
+                        class="form-control ui-autocomplete-input form-control-front"
+                        autocomplete="off"
+                      >
+                        <option value="tuitions" selected>Tuitions</option>
+                        <option value="tutors">Tutors</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="search-type">
+                    <div
+                      id="searchTypeDropdown"
+                      class="pax-details ddn-parent"
+                    >
+                      <input
+                        class="form-control ui-autocomplete-input"
+                        name="SearchText"
+                        id="SearchText"
+                        placeholder="Enter Course or Subject Keywords to Search"
+                        type="text"
+                        autocomplete="off"
+                      />
+                      <input
+                        type="hidden"
+                        id="course"
+                        name="course"
+                        value=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="ripple-parent">
+                    <input
+                      data-role="none"
+                      type="submit"
+                      value="Search"
+                      class="js_ripple search-btn"
+                      onclick="hometuitionSearch(); event.stopPropagation(); return false;"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="container"
+          style="background: url({% static "images/footer-repeat.jpg" %}); margin-bottom: 20px"
+        >
+          <div
+            class="col-lg-12 col-md-12 col-xs-12 text-center hts-contact-block footer-style"
+          >
+            <div class="col-md-6 mar-style">
+              <p class="land-p-style p-style">
+                If you are a student/parent looking for a home tutor near
+                you, please click button below to post your requirements and
+                get free demo class from best home tutors near you.
+              </p>
+              <br />
+              <a
+                href="/studentsignup/"
+                class="btn btn-lg btn-info btn-blue btn-style"
+                >I need a Home/Online Tutor
+              </a>
+            </div>
+            <div class="col-md-6">
+              <p class="land-p-style p-style">
+                If you are a home tutor/teacher interested in teaching part
+                time and looking for students who need home tuition, please
+                click button below to register as a home tutor for free.
+              </p>
+              <br />
+              <a
+                href="/tutorsignup/"
+                class="btn btn-lg btn-info btn-blue btn-style"
+                >Join As A Tutor For Free</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="container-home" id="mrcb">
+          <div class="row">
+            <div class="full-width full-width-lp full-width-back">
+              <div class="right-common-content">
+                <div class="row">
+                  <div class="col-md-6 student-back">
+                    <div id="students-info-lp" class="text-center">
+                      <h2 class="captionColor captionColor1">
+                        Do You Need Tutors Help?
+                      </h2>
+                      <img
+                        src="https://static.hometutorsite.com/content/images/landing/student-reg-steps.jpg"
+                        width="450"
+                        class="img-responsive"
+                      /><br />
+                      <div class="home-free-btn home-free-btn1">
+                        <div class="row">
+                          <div
+                            class="home-btn-reg-free intro-posttuition btn-margin"
+                          >
+                            <a
+                              href="/landing/looking-for-home-tutors/"
+                              class="btn btn-lg btn-info btn-blue btn-border"
+                              >Post Tuition Needs for Free
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 tutor-back">
+                    <div id="students-info-lp" class="text-center">
+                      <h2 class="captionColor captionColor1">
+                        Interested to teach?
+                      </h2>
+                      <img
+                        src="https://static.hometutorsite.com/content/images/landing/tutor-reg-steps.jpg"
+                        width="450"
+                        class="img-responsive"
+                      /><br />
+                      <div
+                        class="home-free-btn intro-postprofile home-free-btn1"
+                      >
+                        <div class="row">
+                          <div class="home-btn-reg-free btn-margin">
+                            <a
+                              href="/landing/looking-for-home-tutors/?user=tutor"
+                              class="btn btn-lg btn-info btn-blue btn-border"
+                              >Join As Tutor for Free
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="height-10 hide-320"></div>
+
+      <div class="height-10 hide-320"></div>
+
+      <div class="container-fluid home-testimonial-info">
+        <div class="row">
+          <div class="container">
+            <div class="row home-testimonial-row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="home-hiw-main-heading">
+                    <div class="divider-lines"></div>
+                    <h3>Why Home Tuition?</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Students/Parents</h3>
+                <hr />
+                <div class="home-testimonial-block home-testimonial-block1">
+                  <div class="pull-left user-pic user-pic1">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions why-home-tuitions-1"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Home Tuition is <b>#1 Secret of Success.</b> Its a
+                        well known fact that home tuition helps students to
+                        succeed. Home tutors provide personalized attention.
+                      </em>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="home-testimonial-block home-testimonial-block1">
+                  <div class="pull-left user-pic user-pic1">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions why-home-tuitions-2"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Expert one-to-one guidance from home tutors helps
+                        students. Here student gets 100% attention and can
+                        ask doubts without any hesitation.
+                      </em>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="home-testimonial-block home-testimonial-block1">
+                  <div class="pull-left user-pic user-pic1">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions why-home-tuitions-3"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Guided students learn & achieve
+                        <b>Better Grades!</b> Numerous students have
+                        benefitted from expert guidance from home
+                        tutors.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Tutors</h3>
+                <hr />
+                <div class="home-testimonial-block home-testimonial-block1">
+                  <div class="pull-left user-pic user-pic1">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions why-home-tuitions-4"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b>Be your own Boss!!!</b> You concentrate on
+                        teaching students as home tutor and we help you find
+                        home tuition needs (part time teaching jobs) posted
+                        by students.
+                      </em>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="home-testimonial-block home-testimonial-block1">
+                  <div class="pull-left user-pic user-pic1">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions why-home-tuitions-5"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Home Tuition is <b>Flexible</b> and
+                        <b>Rewarding.</b> Teach as home tutor at your
+                        convenient timings. Few hours of home tutoring a day
+                        can help you earn decent income.
+                      </em>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="home-testimonial-block home-testimonial-block1">
+                  <div class="pull-left user-pic user-pic1">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions why-home-tuitions-6"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Home tutoring is the best part time job option.
+                        Thousands of parents are offering part time teaching
+                        jobs for home tutors. Work part time and earn
+                        <b>additional income!</b></em
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container-fluid home-testimonial-info"
+        style="background-color: #fff"
+      >
+        <div class="row">
+          <div class="container">
+            <div class="row home-testimonial-row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="home-hiw-main-heading">
+                    <div class="divider-lines"></div>
+                    <h3>How It Works</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Students/Parents</h3>
+                <hr />
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-1"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em>
+                        <b> Tell Us Your Tuition Needs:</b> Just fill few
+                        details about your home tuition needs and we will
+                        show your requirements to all our tutors.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-2"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b> Get Free Demo:</b> Interested home tutors will
+                        apply for your home tuition and we will arrange a
+                        free demo class by our home tutor.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-3"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b>Confirm If You Like: </b> After the demo class,
+                        evaluate the teacher and if you are satisfied with
+                        tutors teaching abilities then confirm him.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-4"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em>
+                        <b>Go Premium:</b> Need help? Avail the best in
+                        class service from our customer service executives
+                        for just Rs 500.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Tutors</h3>
+                <hr />
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-1"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b> Create Profile:</b> Advertise about yourself by
+                        creating your profile. Profiles with more details
+                        gets maximum attention from our students and
+                        parents.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-2"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b>Get Students: </b> You can find students by
+                        searching tuition needs posted on our website which
+                        matches your profile. Apply tuitions relevant to
+                        you.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-3"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b> Start Earning:</b> Students/Parents who posted
+                        the tuition needs you applied will request a demo
+                        class. Give your best in the demo class to get the
+                        tuition confirmed.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive why-home-tuitions how-it-works-4"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        ><b>Go Premium: </b> Need help? Avail the best in
+                        class service from our customer service executives
+                        for just Rs 750.</em
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid home-testimonial-info">
+        <div class="row">
+          <div class="container">
+            <div class="row home-testimonial-row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="home-hiw-main-heading">
+                    <div class="divider-lines"></div>
+                    <h3>Our Users Say</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Students/Parents</h3>
+                <hr />
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive home-common-images-sprite1 home-testimonial-student2 img-circle img-thumbnail"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Great website! We found a caring and humble home
+                        tutor for our daughter. She likes studying with the
+                        home tutor.</em
+                      >
+                    </p>
+                    <p class="by-name">— Gayathri Parents</p>
+                  </div>
+                </div>
+
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive home-common-images-sprite1 home-testimonial-student3 img-circle img-thumbnail"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >I used to struggle with maths. After getting a home
+                        tutor I am doing maths very easily and topped my
+                        class.</em
+                      >
+                    </p>
+                    <p class="by-name">— Balu</p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive home-common-images-sprite1 home-testimonial-student4 img-circle img-thumbnail"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Earlier I am too worried about my kids addiction to
+                        Mobile & TV. Now when home tutor comes home to teach
+                        they study perfectly!</em
+                      >
+                    </p>
+                    <p class="by-name">— Munni</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Tutors</h3>
+                <hr />
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive home-common-images-sprite1 home-testimonial-tutor1 img-circle img-thumbnail"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Teaching is my passion and working as a home tutor
+                        supplements my income as a school teacher. Awesome
+                        home tutoring service!</em
+                      >
+                    </p>
+                    <p class="by-name">— Bhavani</p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive home-common-images-sprite1 home-testimonial-tutor2 img-circle img-thumbnail"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Taking up home tuitions as a home tutor boosts my
+                        income I earn from college as a lecturer. I liked
+                        your ability to find students to teach near my
+                        home.</em
+                      >
+                    </p>
+                    <p class="by-name">— Trinath</p>
+                  </div>
+                </div>
+                <div class="home-testimonial-block">
+                  <div class="pull-left user-pic">
+                    <img
+                      src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                      class="img-responsive home-common-images-sprite1 home-testimonial-tutor3 img-circle img-thumbnail"
+                      alt="Home Tutor Site testimonial"
+                      width="1"
+                      height="1"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <p>
+                      <em
+                        >Yahoooo! I earned my first salary as home tutor
+                        even before completing my M.Pharmacy. Thanks to
+                        HomeTutorSite.com!!!</em
+                      >
+                    </p>
+                    <p class="by-name">—Chiru</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

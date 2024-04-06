@@ -1,0 +1,122 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="full-width">
+      <div class="row public-profile-top">
+        <div class="col-md-9">
+          <h1 class="public-profile-name-heading"><span class="public-profile-name-heading1">Mr Naren Gadhvi</span> <span class="public-profile-name-heading2">(TutorId:<b>6075</b>)-Home Tutor from Shastrinagar, </span></h1>
+        </div>
+
+        <!-- <div class="col-md-3 back1">
+          <a class="back text-left" href="javascript:history.back()"><span class="common-sprite-opt btn-back-sm"></span> Back</a>
+
+          <a href="/home-tuition/home-tutors/cbse-icse-stateboard/?utm_source=organic&utm_medium=hometutorsite&utm_content=6075&utm_campaign=tutor-detail&utm_term=home-tutor-free-demo" class="btn btn-default btn-bold btn-orange">Request Free Demo</a>
+        </div> -->
+      </div>
+
+      <div class="right-common-content">
+        <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Id" name="Id" type="hidden" value="6075" />
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row public-profile-main-content">
+              <div class="col-md-10 public-profile-main-desc">
+                <div class="row">
+                  <div class="col-md-6 padding-left-0">
+                    <label><b>Age & Gender : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.age}} & {{teacher.gender}}</label>
+                    <div class="height-10"></div>
+
+                    <label><b>Experience : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.experience}}</label>
+                    <div class="height-10"></div>
+
+                    <label><b>Qualification : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.qualification}}</label>
+                    <div class="height-10"></div>
+
+                    <label><b>Preferred Time : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.preferred_timing}}</label>
+                    <div class="height-10"></div>
+
+                    <label><b>City : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.city}}</label>
+                    <div class="height-10"></div>
+                    {% if request.user.is_authenticated %}
+
+                    <label><b>Locality : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.locality }}</label>
+
+                    <label><b>Pincode : </b></label>&nbsp;&nbsp;
+                    <label>{{teacher.pincode}}</label>
+                    {% endif %}
+                  </div>
+                  <div class="col-md-4">
+                    <div class="contactinfo">
+                      {% if request.user.is_authenticated %}
+                      <p class="">Mob No. : {{teacher.phone}}</p>
+                      <p class="">Email : {{teacher.user.email}}</p>
+                      {% else %}
+                      <p>plese login to see contact details</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="height-10 hidden-sm"></div>
+                  </div>
+                </div>
+                <div class="height-10 hidden-sm"></div>
+              </div>
+              <div class="col-md-2 public-profile-pic-info">
+                <!-- <div class="no-rating">
+                  <span>No Ratings yet</span>
+                </div> -->
+
+                <div class="public-profile-pic">
+                  <div class="featured-lg-block">
+                    <!-- <img src=https://hometuitioncentre.blob.core.windows.net/profilepic/6075-mr-naren-gadhvi-cropped.jpg class="img-rounded img-responsive img-thumbnail" alt="home tutor site photo" /> -->
+                    <span class="featured-tag-lg"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 public-profile-verification-info">
+                <div class="row">
+                  <div class="profile-last-row">
+                    <div class="col-xs-12 col-md-6">
+                      <div class="tutor-last-login-block">
+                        <label><b>Last Login</b> </label>&nbsp;
+                        <label>{% if teacher.user.last_login %}{{teacher.user.last_login}}{% endif %}</label>
+                      </div>
+                      <div class="public-profile-verification">
+                        <div class="verification-status">
+                          <div class="block">
+                            <div class="fa-icon-main">
+                              <span class="verification-icon-lg verified common-sprite-opt phone" title="Phone verified"></span>
+                            </div>
+
+                            <div class="fa-icon-main">
+                              <span class="verification-icon-lg verified common-sprite-opt email" title="Email verified"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% if not request.user.is_authenticated %}
+                    <div class="col-xs-12 col-md-6 send-message-button">
+                      <div class="block">
+                        <a href="/signin/" class="btn btn-default btn-bold btn-orange">Log In</a>
+                      </div>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

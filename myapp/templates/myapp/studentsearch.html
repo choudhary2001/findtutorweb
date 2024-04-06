@@ -1,0 +1,1082 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+  <div class="container">
+    <div class="container-wrapper">
+      <div class="row breadcrumb-custom-block hidden-xs hidden-sm">
+        <div class="container col-lg-12">
+          <div class="breadcrumb-block hidden-xs hidden-sm col-lg-9">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li><a href="#">Search</a></li>
+              <li class="active">
+                Home Tuitions, Online Tuitions &amp; Part Time Tutoring Jobs
+                
+              </li>
+            </ol>
+          </div>
+          <div class="hts-contact-top-block contact-searchpage col-lg-3">
+            <div>
+              <a
+                href="tel:+919951441444"
+                target="_blank"
+                title="For contacting customer service, please give a missed call and we will call you back soon (9am to 6pm)"
+                ><span style="color: #084d75">Missed Call</span
+                ><img
+                  src="https://static.hometutorsite.com/content/images/common-sm/hts-contact.png"
+                />8367682255</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row common-logo-search-block common-logo-search-block1">
+        <div class="logo-home logo-common common-logo-left hidden-xs">
+            <a href="/">
+                <span class="logo"><img src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" class="img-responsive home-sprite home-logo-image" alt="home tutor site logo" /></span>
+                <p class="logo-title">Home Tutor Site<span class="logo-caption">Learn.. Achieve!!</span></p>
+            </a>
+        </div>
+    
+        <div class="common-search-bar" style="display: flex; align-items: center; height: 90px;">
+            <div class="col-md-12 full-search-bar">
+            <form action="/search/" id="topSearchBar" method="POST">
+              {% csrf_token %}
+                    <div class="input-group">
+                      <div style="display: flex;">
+
+                        <input type="text" placeholder="enter your city"  class = "form-control" style="" name="city">
+                       
+                        <input id="SearchText" name="SearchText" type="text" class="form-control main-search-bar" placeholder="Enter Course or Subject Keywords to Search">
+                        <input type="hidden" id="SearchText" name="searchTypeDropdown" type="text" value="tuitions" class="form-control main-search-bar" placeholder="Enter Course or Subject Keywords to Search">
+    
+                      </div>
+    
+    
+                        <span class="input-group-btn main-search-block intro-search">
+                            <button id="pageHeaderSearch" name="pageHeaderSearch" type="submit" class="btn btn-info search-btn btn-orange common-search-bar-btn">
+                                <img src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" class="img-responsive common-sm-sprite search-image" alt="Home Tutor Site search" width="1" height="1" />
+                            </button>
+                        </span>
+                    </div>
+              </form>
+            </div>
+    
+        </div>
+      </div>
+    
+
+      <div class="row">
+        <div class="preloader-refine-wrapper">
+          <div id="preloader-refine-block">
+            <div class="preloader-refine-inner">
+              <img
+                src="https://static.hometutorsite.com/content/images/preloaders/preloader.gif"
+                alt="home tutor site preloader"
+              />
+            </div>
+          </div>
+<!-- 
+          <div class="left-25">
+            <link
+              href="/Content/css/bootstrap-tagsinput-new.css"
+              rel="stylesheet"
+              type="text/css"
+              property="stylesheet"
+            />
+
+            <form action="/search/" id="search-in-home" method="get">
+              <div id="refineSearchDiv" class="left-search-block">
+                <p class="refine-search-heading">
+                  Refine Search
+                  <span
+                    id="spanRightSideArrow"
+                    class="refine-chevrolet common-sm-sprite refine-chevrolet-down"
+                  ></span>
+                </p>
+
+                <div class="tag-block tag-block-refine">
+                  <div class="filter-search-block"></div>
+                </div>
+
+                <div class="refine-search-block">
+                  <div id="refine-search">
+                    <div
+                      class="panel-group"
+                      id="accordion-refine"
+                      role="tablist"
+                      aria-multiselectable="true"
+                    >
+                      <div class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingLocality"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseOne-refineLocality"
+                              aria-expanded="true"
+                              aria-controls="collapseOne-refineLocality"
+                            >
+                              Locality / Pincode
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseOne-refineLocality"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingLocality"
+                        >
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <input
+                                type="text"
+                                class="form-control typeahead"
+                                name="refineLocality"
+                                id="refineLocality"
+                                placeholder="Locality or Pincode"
+                              />
+
+                              <div id="localitySuggestion"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingCourse"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseEight-refineCourse"
+                              aria-expanded="true"
+                              aria-controls="collapseEight-refineCourse"
+                            >
+                              Course
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseEight-refineCourse"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingCourse"
+                        >
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <input
+                                type="text"
+                                class="form-control typeahead"
+                                name="refineCourse"
+                                id="refineCourse"
+                                placeholder="enter course"
+                              />
+                              <div id="courseSuggestion"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingSubject"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseTwo-refineSubject"
+                              aria-expanded="true"
+                              aria-controls="collapseTwo-refineSubject"
+                            >
+                              Subject
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseTwo-refineSubject"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingSubject"
+                        >
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <input
+                                type="text"
+                                class="form-control typeahead"
+                                name="refineSubject"
+                                id="refineSubject"
+                                placeholder="enter subject"
+                              />
+                              <div id="subjectSuggestion"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="panelGender" class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingThree"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              class="collapsed"
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseThree-refine"
+                              aria-expanded="false"
+                              aria-controls="collapseThree-refine"
+                            >
+                              Gender
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseThree-refine"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingThree"
+                        >
+                          <div class="panel-body">
+                            <div>
+                              <label class="radio-inline"
+                                ><input
+                                  type="radio"
+                                  name="refineGender"
+                                  id="refineGenderMale"
+                                  class="refineGender"
+                                  value="0"
+                                />
+                                Male</label
+                              >
+                              <label class="radio-inline"
+                                ><input
+                                  type="radio"
+                                  name="refineGender"
+                                  id="refineGenderFemale"
+                                  class="refineGender"
+                                  value="1"
+                                />
+                                Female</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+<
+                      <div id="panelExperience" class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingFive"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              class="collapsed"
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseFive-refine"
+                              aria-expanded="false"
+                              aria-controls="collapseFive-refine"
+                            >
+                              Experience
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseFive-refine"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingFive"
+                        >
+                          <div class="panel-body">
+                            <div>
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineExperienceRadio"
+                                    id="refineExperienceRadio1"
+                                    class="refineExperienceRadio"
+                                    value="0"
+                                  />
+                                  0 - 2 years
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineExperienceRadio"
+                                    id="refineExperienceRadio2"
+                                    class="refineExperienceRadio"
+                                    value="1"
+                                  />
+                                  2 - 5 years
+                                </label>
+                              </div>
+
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineExperienceRadio"
+                                    id="refineExperienceRadio3"
+                                    class="refineExperienceRadio"
+                                    value="2"
+                                  />
+                                  5 - 10 years
+                                </label>
+                              </div>
+
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineExperienceRadio"
+                                    id="refineExperienceRadio4"
+                                    class="refineExperienceRadio"
+                                    value="3"
+                                  />
+                                  Above 10 years
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingSix"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              class="collapsed"
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseSix-refine"
+                              aria-expanded="false"
+                              aria-controls="collapseSix-refine"
+                            >
+                              Hourly Price
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseSix-refine"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingSix"
+                        >
+                          <div class="panel-body">
+                            <div>
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineHourlyPrice"
+                                    id="refineHourlyPrice1"
+                                    class="refineHourlyPrice"
+                                    value="0"
+                                  />
+                                  Upto Rs 200
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineHourlyPrice"
+                                    id="refineHourlyPrice2"
+                                    class="refineHourlyPrice"
+                                    value="1"
+                                  />
+                                  Rs 201 - Rs 500
+                                </label>
+                              </div>
+
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineHourlyPrice"
+                                    id="refineHourlyPrice3"
+                                    class="refineHourlyPrice"
+                                    value="2"
+                                  />
+                                  Rs 501 - Rs 1000
+                                </label>
+                              </div>
+
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineHourlyPrice"
+                                    id="refineHourlyPrice5"
+                                    class="refineHourlyPrice"
+                                    value="3"
+                                  />
+                                  Above Rs 1000
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default">
+                        <div
+                          class="panel-heading"
+                          role="tab"
+                          id="headingSeven"
+                        >
+                          <h4 class="panel-title">
+                            <a
+                              class="collapsed"
+                              data-toggle="collapse"
+                              data-parent="#accordion-refine"
+                              href="#collapseSeven-refine"
+                              aria-expanded="false"
+                              aria-controls="collapseSeven-refine"
+                            >
+                              Tuition Type
+                              <span
+                                class="indicator accordion-chevrolet accordion-chevrolet-down-black"
+                              ></span>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseSeven-refine"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingSeven"
+                        >
+                          <div class="panel-body">
+                            <div>
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineTuitionType"
+                                    id="refineTuitionTypeHomeTuition"
+                                    class="refineTuitionType"
+                                    value="0"
+                                  />
+                                  Home Tuition
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineTuitionType"
+                                    id="refineTuitionTypeAtTutorHome"
+                                    class="refineTuitionType"
+                                    value="1"
+                                  />
+                                  At Tutor Home
+                                </label>
+                              </div>
+
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineTuitionType"
+                                    id="refineTuitionTypeAtInstitute"
+                                    class="refineTuitionType"
+                                    value="2"
+                                  />
+                                  At Institute
+                                </label>
+                              </div>
+
+                              <div class="radio">
+                                <label>
+                                  <input
+                                    type="radio"
+                                    name="refineTuitionType"
+                                    id="refineTuitionTypeOnlineTuition"
+                                    class="refineTuitionType"
+                                    value="3"
+                                  />
+                                  Online Tuition
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <script type="text/javascript">
+              function clearInitialLocation() {
+                $("#filtersearchLocality").parent().remove();
+
+                if ($.trim($(".filter-search-block").html()).length == 0) {
+                  $(".filter-search-block").remove();
+                }
+
+                $("[name='refineLocality']").val("");
+
+                refineSearch();
+              }
+
+              function clearInitialCourse() {
+                $("#filtersearchCourse").parent().remove();
+
+                if ($.trim($(".filter-search-block").html()).length == 0) {
+                  $(".filter-search-block").remove();
+                }
+
+                $("[name='refineCourse']").val("");
+
+                refineSearch();
+              }
+
+              function clearInitialSubject() {
+                $("#filtersearchSubject").parent().remove();
+
+                if ($.trim($(".filter-search-block").html()).length == 0) {
+                  $(".filter-search-block").remove();
+                }
+
+                $("[name='refineSubject']").val("");
+
+                refineSearch();
+              }
+
+              $(function () {
+                if ($("#refineCourse").length) {
+                  var remoteUrl =
+                    location.protocol +
+                    "//" +
+                    location.host +
+                    "/home/getcourses/?query=%QUERY";
+                  var $SelectedSuggestion = $("#courseSuggestion").hide(),
+                    courses = new Bloodhound({
+                      datumTokenizer: function (datum) {
+                        return Bloodhound.tokenizers.whitespace(datum.Name);
+                      },
+                      queryTokenizer: Bloodhound.tokenizers.whitespace,
+                      remote: {
+                        url: remoteUrl,
+                        filter: function (courses) {
+                          return courses;
+                        },
+                      },
+                    });
+
+                  // Initialize the Bloodhound suggestion engine
+                  courses.initialize();
+
+                  // Instantiate the Typeahead UI
+                  $("#refineCourse.typeahead")
+                    .typeahead(null, {
+                      displayKey: "Name",
+                      source: courses.ttAdapter(),
+                    })
+                    .on("typeahead:selected", function (obj, selectedItem) {
+                      $("#refineCourse").text(selectedItem.Name);
+                      $("#refineCourse").trigger("change");
+                      if ($("#refineSubject").length) {
+                        $("#refineSubject").text("");
+                        $("#refineSubject").focus();
+                      }
+                    })
+                    .on(
+                      "typeahead:autocompleted",
+                      function (obj, selectedItem) {
+                        $("#refineCourse").text(selectedItem.Name);
+                        $("#refineCourse").trigger("change");
+                        if ($("#refineSubject").length) {
+                          $("#refineSubject").text("");
+                          $("#refineSubject").focus();
+                        }
+                      }
+                    );
+
+                  $("#refineCourse").keypress(function (e) {
+                    if (e.which == 13) {
+                      // Enter key = keycode 13
+                      if ($("#refineSubject").length) {
+                        $("#refineSubject").focus();
+                      }
+                      return false;
+                    }
+                  });
+                }
+
+                if ($("#refineSubject").length) {
+                  var remoteUrl =
+                    location.protocol +
+                    "//" +
+                    location.host +
+                    "/home/getsubjects/?query=%QUERY";
+                  var $SelectedSuggestion = $("#subjectSuggestion").hide(),
+                    subjects = new Bloodhound({
+                      datumTokenizer: function (datum) {
+                        return Bloodhound.tokenizers.whitespace(datum.Name);
+                      },
+                      queryTokenizer: Bloodhound.tokenizers.whitespace,
+                      remote: {
+                        url: remoteUrl,
+                        filter: function (subjects) {
+                          return subjects;
+                        },
+                      },
+                    });
+
+                  // Initialize the Bloodhound suggestion engine
+                  subjects.initialize();
+
+                  // Instantiate the Typeahead UI
+                  $("#refineSubject.typeahead")
+                    .typeahead(null, {
+                      displayKey: "Name",
+                      source: subjects.ttAdapter(),
+                    })
+                    .on("typeahead:selected", function (obj, selectedItem) {
+                      $("#refineSubject").text(selectedItem.Name);
+                      $("#refineSubject").trigger("change");
+                    })
+                    .on(
+                      "typeahead:autocompleted",
+                      function (obj, selectedItem) {
+                        $("#refineSubject").text(selectedItem.Name);
+                        $("#refineSubject").trigger("change");
+                      }
+                    );
+
+                  $("#refineSubject").keypress(function (e) {
+                    if (e.which == 13) {
+                      // Enter key = keycode 13
+                      $("#refineSubject").blur();
+                      return false;
+                    }
+                  });
+                }
+              });
+            </script>
+
+            <script src="/Content/js/bootstrap-tagsinput.js"></script>
+          </div> -->
+
+          <div class="right-100">
+            <div class="row">
+              <div id="list-heading">
+                <h1>
+                  Home Tuitions / Part time tutoring jobs 
+                </h1>
+              </div>
+            </div>
+
+            <div id="searchOptions" class="row">
+              <div class="list-modal-block">
+                <div class="sort">
+                  <label for="sortDropdown" class="pull-left"
+                    >Sort By
+                  </label>
+                  <select
+                    name="sortDrowdown"
+                    id="sortDropdown"
+                    class="form-control input-xs pull-left"
+                  >
+                    <option value="0" selected>Default Sort</option>
+                    <option value="1">Date New to Old</option>
+                    <option value="2">Date Old to New</option>
+                    <option value="3">Hourly Price Low to High</option>
+                    <option value="4">Hourly Price High to Low</option>
+                  </select>
+                </div>
+
+                <div class="list-modal">
+                  <div class="user-list-view">
+                    <div class="grid-view">
+                      <a href="#"
+                        ><span class="grid-view-img"></span> Grid</a
+                      >
+                    </div>
+                    <div class="list-view">
+                      <a href="#"
+                        ><span class="list-view-img"></span> List</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="paging">
+                  <p>Scroll down for more tuitions.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="searchResults">
+              {% for student in student %}
+              <div class="" style="display: none"></div>
+              {% comment %} cardd {% endcomment %}
+              <div
+                class="col-tn-12 col-xs-12 col-sm-12 col-md-6 col-lg-4 users-list grid-records"
+              >
+                <div class="user-sp user-sp-tuitions">
+                  <div class="header">
+                    <div class="tuition-list-left">
+                      <div class="posting-date-price">
+                        <div class="posting-date">
+                          <span class="grid-date-posting">
+                            <span class="fs-12"
+                              ><img
+                                src="https://static.hometutorsite.com/content/images/common-sm/calendar.jpg"
+                                alt="home tutor site calender icon"
+                              />
+                              Posted On :</span
+                            >
+                            {{student.posted_on}} &nbsp;&nbsp;
+                          </span>
+
+                          <span class="list-tuition-title">
+                            <a
+                              href="/home-tuition/part-time-job-class10-accounts-12b-santhinikethan-society-/666617"
+                              ><span class="name"
+                                ><span
+                                  data-toggle="tooltip"
+                                  data-placement="top"
+                                  title=""
+                                  class="brown-tooltip"
+                                  data-original-title="Wanted home tutor for Class10 igcse board , Accounts "
+                                >
+                                  {{student.tution_desc}}
+                                </span></span
+                              ></a
+                            >
+                          </span>
+                        </div>
+                        <div class="price grid-price" style="display: none">
+                          <span
+                            class="fee red-tooltip"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title=""
+                            data-original-title="Hourly"
+                          >
+                            <img
+                              src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                              class="img-responsive common-sprite-opt price-sm-icon"
+                              alt="Home Tutor Site tuition price"
+                              width="1"
+                              height="1"
+                            />
+                            0
+                            <span class="text-muted small normal">/ H</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="profile-pic">
+                        <div>
+                          <a href="/student/publicprofile?profileid=425219">
+                            <img
+                              src="https://static.hometutorsite.com/content/images/userinfo/female-default-lg.jpg"
+                              onerror="this.onerror = null; this.src =
+                              'https://static.hometutorsite.com/content/images/userinfo/male-default-lg.jpg';"
+                              width="35"
+                              class="img-rounded"
+                              alt="home tutor
+                              site default male icon"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <div class="main-info">
+                        <a
+                          href="/home-tuition/part-time-job-class10-accounts-12b-santhinikethan-society-/666617"
+                          ><p class="name grid-tuition-title">
+                            <span
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title=""
+                              class="brown-tooltip"
+                              data-original-title="Wanted home tutor for Class10 igcse board , Accounts "
+                              >{{student.tution_desc}}
+                            </span>
+                          </p></a
+                        >
+                        <p class="name-sm list-tuition-locality">
+                          <span
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title=""
+                            class="red-tooltip"
+                            data-original-title="Location"
+                            ><img
+                              src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                              class="img-responsive common-sprite-opt location-sm-icon red-tooltip"
+                              alt="Home Tutor Site tutor locality"
+                              width="1"
+                              height="1"
+                              title="Locality"
+                            />
+                            {{student.locality}} </span
+                          >,
+                          <span
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title=""
+                            class="red-tooltip"
+                            data-original-title="City"
+                          >
+                            {{student.city}}
+                          </span>
+                        </p>
+                        <div class="list-category-subjects">
+                          <span
+                            class="red-tooltip"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title=""
+                            data-original-title="Course"
+                          >
+                            <img
+                              src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                              class="img-responsive common-sprite-opt course-sm-icon"
+                              alt="Home Tutor Site tuition course"
+                              width="1"
+                              height="1"
+                            />
+                            {{student.courses}} &nbsp;
+                          </span>
+                          <span
+                            class="red-tooltip"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title=""
+                            data-original-title="Subjects"
+                          >
+                            <img
+                              src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                              class="img-responsive common-sprite-opt subjects-sm-icon"
+                              alt="Home Tutor Site tuition subjects"
+                              width="1"
+                              height="1"
+                            />
+                            {{student.subjects}}
+                          </span>
+                        </div>
+                        <div
+                          class="tuition-description list-tuition-description red-tooltip"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="Tuition Description"
+                        >
+                          <p>{{student.tution_desc}}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tuition-list-right">
+                      <div class="price">
+                        <span
+                          class="fee red-tooltip"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="Hourly"
+                        >
+                          <img
+                            src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                            class="img-responsive common-sprite-opt price-sm-icon"
+                            alt="Home Tutor Site tuition price"
+                            width="1"
+                            height="1"
+                          />
+
+                          0
+                          <span class="text-muted small normal">/ H</span>
+                        </span>
+                        <br />
+                        <span class="list-date-posting">
+                          <span class="fs-12"
+                            ><img
+                              src="https://static.hometutorsite.com/content/images/common-sm/calendar.jpg"
+                              alt="home tutor site calender icon"
+                            />
+                            Posted On :</span
+                          >
+                          {{student.posted_on}} &nbsp;&nbsp;
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    <div class="key-point preferences-block">
+                      <p class="name-sm name-xs">
+                        <span class="heading">Preferred</span>:
+
+                        <span
+                          class="red-tooltip"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="Gender"
+                        >
+                          <img
+                            src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                            class="img-responsive common-sprite-opt gender-male-sm-icon"
+                            alt="Home Tutor Site tuition gender"
+                            width="1"
+                            height="1"
+                          />
+
+                          {{student.preferred_tutor}}
+                        </span>
+                        <span
+                          class="red-tooltip"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="Timings"
+                        >
+                          <img
+                            src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                            class="img-responsive common-sprite-opt time-sm-icon"
+                            alt="Home Tutor Site tuition timings"
+                            width="1"
+                            height="1"
+                          />
+
+                          {{student.preferred_timing}}
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="key-point Course">
+                      <span
+                        class="red-tooltip"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title=""
+                        data-original-title="Course"
+                      >
+                        <img
+                          src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                          class="img-responsive common-sprite-opt course-sm-icon"
+                          alt="Home Tutor Site tuition course"
+                          width="1"
+                          height="1"
+                        />
+
+                        {{student.courses}} &nbsp; TuitionId:
+                        <strong>666617</strong>
+                      </span>
+                    </div>
+
+                    <div class="key-point subject">
+                      <span
+                        class="red-tooltip"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title=""
+                        data-original-title="subjects"
+                      >
+                        <img
+                          src="https://static.hometutorsite.com/content/images/common-sm/transparent.png"
+                          class="img-responsive common-sprite-opt subjects-sm-icon"
+                          alt="Home Tutor Site tuition subjects"
+                          width="1"
+                          height="1"
+                        />
+
+                        {{student.subjects}}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tuition-description grid-tuition-description red-tooltip"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title=""
+                    data-original-title="Tuition Description"
+                  >
+                    <p>{{student.tution_desc}}</p>
+                  </div>
+
+                  <div class="footer">
+                    <div class="buttons">
+                      <a
+                        href=" {% url "studetails" student.id %}"
+                        class="btn btn-default btn-xs btn-blue"
+                        style="margin-right: 8px"
+                        >View Details</a
+                      >
+
+                      <!-- <div
+                        id="apply-tuition-666617"
+                        class="apply-tuition-btn"
+                      >
+                        <a
+                          class="btn btn-default btn-xs btn-blue"
+                          data-ajax="true"
+                          data-ajax-method="GET"
+                          data-ajax-mode="replace"
+                          data-ajax-update="#apply-tuition-666617"
+                          href="/home/applytuition/?stuitionId=666617&amp;stutorId=1454760"
+                          >Apply</a
+                        >
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% comment %} card end {% endcomment %} {% endfor %}
+            </div>
+
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

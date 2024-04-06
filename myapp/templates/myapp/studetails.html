@@ -1,0 +1,168 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<div class="row public-profile-main-content">
+  <div class="public-profile-main-desc public-profile-main-desc-tuitions">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12 public-profile-responsive-tabs">
+            <ul class="nav nav-tabs responsive">
+              <li class="active">
+                <a href="#details" data-toggle="tab">Details</a>
+              </li>
+              <li>
+                <a href="#updates" data-toggle="tab" class="home-tuition-updates-tab">Updates</a>
+              </li>
+            </ul>
+            <div id="myTabContent" class="tab-content responsive public-profile">
+              <div id="details" class="tab-pane fade active in">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label><b>Course : </b></label>&nbsp;&nbsp;
+                    <label>{{student.courses}}</label>
+                    <div class="height-10"></div>
+                    <label><b>Subject : </b></label>&nbsp;&nbsp;
+                    <label>{{student.subjects}}</label>
+                    <div class="height-10"></div>
+                    <label><b>Tuition Type : </b></label>&nbsp;&nbsp;
+                    <label>{{student.tution_type}}</label>
+                    <div class="height-10"></div>
+                    <label><b>City : </b></label>&nbsp;&nbsp;
+                    <label>{{student.city}}</label>
+                    {% if request.user.is_authenticated %}
+                    <div class="height-10"></div>
+                    <label><b>Location : </b></label>&nbsp;&nbsp;
+                    <label>{{student.locality}}</label>
+                    <div class="height-10"></div>
+                    <label><b>Pincode : </b></label>&nbsp;&nbsp;
+                    <label>{{student.pincode}}</label>
+                    {% endif %}
+                  </div>
+                  <div class="col-md-6" id="upgrade-hurry">
+                    <div class="profile-contact-info-block">
+                      <h4>
+                        <img src="https://static.hometutorsite.com/content/images/common-sm/contact-info-icon.jpg" alt="home tutor site contact information" />
+                        Contact Info
+                      </h4>
+                      <div class="profile-contact-info-inner">
+                        <div id="contactInfoPanel">
+                          {% if request.user.is_authenticated %}
+                          <div>
+                            <p>Mob No.: {{student.phone}}</p>
+                            <p>Email : {{student.user.email}}</p>
+                          </div>
+                          {% else %}
+                          <p>Please log in to see contact info</p>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="height-10 hidden-sm"></div>
+                  </div>
+                </div>
+
+                <div class="height-10 hidden-sm"></div>
+                <div class="height-10 hidden-sm"></div>
+                <hr />
+                <div class="row">
+                  <div class="tuition-preferences">
+                    <div class="col-md-12">
+                      <h3 class="public-profile-sub-heading">Preferences</h3>
+                    </div>
+                    <!-- <div class="col-md-4">
+                      <h4>Gender</h4>
+                      <p>Female</p>
+                    </div> -->
+                    <div class="col-md-4">
+                      <h4>Preferred Time</h4>
+                      <p>{{student.preferred_timing}}</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h4>Monthly Fee</h4>
+
+                      <p>{{student.fee_offered}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="height-10"></div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3 class="public-profile-sub-heading">Tuition Description</h3>
+                    <p>{{student.tution_location}}</p>
+                    <div class="height-10"></div>
+                  </div>
+                </div>
+                <hr />
+                {% if not request.user.is_authenticated %}
+
+                <div class="height-10"></div>
+                <div class="row" style="text-align: center" id="hurry-block">
+                  <div class="notice notice-success">
+                    <strong>No tutor has contacted parent till now. Login to view this contact and get the tuition.</strong>
+                  </div>
+                  <a href="/signin/" class="btn btn-default btn-orange apply-tuition-style">Login To View</a>
+
+                  &nbsp;
+                </div>
+                {% endif %}
+              </div>
+
+              <div id="updates" class="tab-pane fade">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="review-block">
+                      <div class="row">
+                        <!-- <div class="col-sm-3 text-center">
+                          <img src="https://static.hometutorsite.com/content/images/userinfo/male-default-lg.jpg" width="35" class="img-rounded profile-pic1" alt="home tutor site default male icon" />
+
+                          <div class="review-block-name">Palak Patel</div>
+                          <div class="review-block-date">4/5/2024</div>
+                        </div>
+                        <div class="col-sm-9">
+                          <div class="review-block-title">Home Tuition Requirement Posted.</div>
+                          <div class="review-block-description">Palak Patel posted a home tuition requirement for Iv, CBSE at Sola bhagvat road(Pincode: 380060)</div>
+                        </div> -->
+                      </div>
+                      <hr />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 ad-block">
+        <div class="lp-form sidebarsignup1-style">
+          <p class="user-q">are you a Home Tutor</p>
+          <div class="home-user-heading">
+            <h3 style="color: #325d7d">Looking for Students?</h3>
+          </div>
+          <div class="home-user-pic">
+            <img src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" class="img-responsive home-common-images-sprite home-main-block-tutor" alt="Home Tutor Site want to teach" width="1" height="1" />
+          </div>
+          <a href="/tutorsignup/" class="nav-home">
+            <input class="btn btn-primary btn-block btn-blue btn-orange tuition-font" type="submit" name="commit" value="POST PROFILE FOR FREE" />
+          </a>
+          <div class="height-10" style="height: 21px"></div>
+          <div style="height: 2px; border: 1px dashed #a09e9e"></div>
+          <div class="height-10" style="height: 15px"></div>
+          <p class="user-q">are you a student / parent</p>
+          <div class="home-user-heading">
+            <h3 style="color: #325d7d">Looking for Home Tutors?</h3>
+          </div>
+          <div class="home-user-pic">
+            <img src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" class="img-responsive home-common-images-sprite home-main-block-student" alt="Home Tutor Site want to learn" width="1" height="1" />
+          </div>
+          <a href="/studentsignup/" class="nav-home">
+            <input class="btn btn-primary btn-block btn-blue btn-orange tuition-font" type="submit" name="commit" value="POST TUITION NEEDS FOR FREE" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
